@@ -1,10 +1,13 @@
-import React from 'react'
-
-import { ExampleComponent } from 'react-nmp-modal'
-import 'react-nmp-modal/dist/index.css'
+import React, { useState } from 'react'
+import FormModal from 'react-nmp-modal'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [isShowing, setIsShowing] = useState(false)
+  const handleClickToClose = () => {
+    setIsShowing(!isShowing)
+  }
+
+  return <FormModal onClick={handleClickToClose} />
 }
 
 export default App

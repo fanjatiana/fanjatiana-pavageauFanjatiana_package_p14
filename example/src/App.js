@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import FormModal from 'react-nmp-modal'
 
 const App = () => {
-  const [isShowing, setIsShowing] = useState(false)
+  /*const [isShowing, setIsShowing] = useState(true)
   const handleClickToClose = () => {
-    setIsShowing(!isShowing)
+    setIsShowing(!isShowing);
   }
-
   return <FormModal onClick={handleClickToClose} />
+*/
+  return <FormModal />
 }
 
 export default App

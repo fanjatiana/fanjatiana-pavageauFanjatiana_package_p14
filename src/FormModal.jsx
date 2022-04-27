@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-const FormModal = () => {
-  const [isShowing, setIsShowing] = useState(true)
-  const handleClickToClose = () => {
-    setIsShowing(!isShowing)
-  }
+const FormModal = ({ onClick }) => {
   const slideUp = keyframes`
   from
   {
@@ -42,7 +38,6 @@ to
     width: auto;
     height: 100vh;
     background: transparent;
-    z-index: -10000;
     position: fixed;
     top: 0;
     right: 0;
@@ -62,7 +57,7 @@ to
     z-index: 1000;
     border-radius: 15px;
     animation-fill-mode: forwards;
-    animation: ${slideUp} 0.3s;
+    animation: ${slideUp} 0.3s linear;
   `
 
   const ModalBtn = styled.div`
@@ -107,7 +102,7 @@ to
     <ModalContainer>
       <ModalWindow>
         <ModalBtn>
-          <Button aria-label='Close' onClick={handleClickToClose}>
+          <Button aria-label='Close' onClick={onClick}>
             X
           </Button>
         </ModalBtn>

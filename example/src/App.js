@@ -3,7 +3,7 @@ import FormModal from 'react-nmp-modal'
 import ReactDOM from 'react-dom'
 
 const App = () => {
-  const [isShowing, setIsShowing] = useState(false)
+  const [isShowing, setIsShowing] = useState(true)
   const handleClickToClose = () => {
     setIsShowing(!isShowing)
   }

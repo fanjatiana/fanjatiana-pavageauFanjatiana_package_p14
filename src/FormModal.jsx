@@ -30,34 +30,81 @@ to
 
 `
 
-  const ModalContainer = styled.div`
-    display: flex;
+  const blowUpModal = keyframes`
+
+0% {
+  transform:scale(0);
+}
+100% {
+  transform:scale(1);
+}
+`
+
+  const blowUpContent = keyframes`
+0% {
+  transform:scale(0.5);
+  opacity:1;
+}
+100% {
+  transform:scale(1);
+}
+`
+  {
+    /*
+display: flex;
     justify-content: center;
     align-item: center;
     margin: auto;
-    width: auto;
-    height: 100vh;
-    background: transparent;
+    width: 100%;
+    height: 100%;
+    background:rgba(20, 0, 0, 0.4);
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-  `
-
-  const ModalWindow = styled.div`
-    -webkit-box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
+animation: ${slideUp} 0.3s linear;
+*/
+    /*
+ -webkit-box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
     background: #fff;
     width: 300px;
     height: 60px;
-    position: absolute;
-    bottom: 10px;
-    left: 40%;
     z-index: 1000;
+    margin: auto;
     border-radius: 15px;
-    animation-fill-mode: forwards;
-    animation: ${slideUp} 0.3s linear;
+    z-index: 1;
+     position: relative;
+*/
+  }
+  const ModalContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-item: center;
+    z-index: 0;
+    transform: scale(1);
+    background: rgba(0, 0, 0, 0.7);
+    animation: ${blowUpModal} 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    width: 100%;
+    height: 100vh;
+  `
+
+  const ModalWindow = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background: #fff;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    background: white;
+    position: relative;
+    border-radius:5px;
+    z-index: 0;
+    animation: ${blowUpContent} 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    -webkit-box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
   `
 
   const ModalBtn = styled.div`
@@ -73,7 +120,7 @@ to
 
   const Message = styled.p`
     color: #000;
-    font-size: 1em;
+    font-size: 1.2em;
   `
 
   const Button = styled.button`

@@ -1,22 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const FormModal = ({ onClick }) => {
-  const slideUp = keyframes`
-  from
-  {
-    transform: translateY(100px);
-    opacity : 0
-    
-  }
-  
- to
-  {
-    transform: translateY(-10px);
-    opacity:1
-  }
-`
-
   const changeOpacity = keyframes`
 from
 {
@@ -49,36 +34,13 @@ to
   transform:scale(1);
 }
 `
-  {
-    /*
-display: flex;
-    justify-content: center;
-    align-item: center;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    background:rgba(20, 0, 0, 0.4);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-animation: ${slideUp} 0.3s linear;
-*/
-    /*
- -webkit-box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
-    background: #fff;
-    width: 300px;
-    height: 60px;
-    z-index: 1000;
-    margin: auto;
-    border-radius: 15px;
-    z-index: 1;
-     position: relative;
-*/
-  }
+
   const ModalContainer = styled.div`
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
     display: flex;
     justify-content: center;
     align-item: center;
@@ -87,20 +49,20 @@ animation: ${slideUp} 0.3s linear;
     background: rgba(0, 0, 0, 0.7);
     animation: ${blowUpModal} 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     width: 100%;
-    height: 100vh;
+    height: 100%;
   `
 
   const ModalWindow = styled.div`
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     background: #fff;
     width: 200px;
     height: 200px;
     margin: auto;
     background: white;
     position: relative;
-    border-radius:5px;
+    border-radius: 5px;
     z-index: 0;
     animation: ${blowUpContent} 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     -webkit-box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
@@ -120,7 +82,7 @@ animation: ${slideUp} 0.3s linear;
 
   const Message = styled.p`
     color: #000;
-    font-size: 1.2em;
+    font-size: 1em;
   `
 
   const Button = styled.button`

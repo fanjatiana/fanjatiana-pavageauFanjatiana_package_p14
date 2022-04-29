@@ -1,3 +1,3 @@
-import FormModal from './FormModal'
+import Modal from './Modal'
 
-export default FormModal
+export default Modal

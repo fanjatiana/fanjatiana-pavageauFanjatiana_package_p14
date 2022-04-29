@@ -1,7 +1,22 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-const FormModal = ({ onClick }) => {
+const Modal = ({ modalStyles, onClick, messageText }) => {
+  const {
+    modalContainerBg,
+    bg,
+    width,
+    height,
+    radius,
+    messageColor,
+    messageFontSize,
+    buttonColor,
+    buttonBg,
+    buttonWidth,
+    buttonHeight,
+    buttonHoverColor,
+    buttonHoverBg
+  } = modalStyles
   const changeOpacity = keyframes`
 from
 {
@@ -46,7 +61,7 @@ to
     align-item: center;
     z-index: 0;
     transform: scale(1);
-    background: rgba(0, 0, 0, 0.7);
+    background: ${modalContainerBg};
     animation: ${blowUpModal} 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     width: 100%;
     height: 100%;
@@ -56,13 +71,12 @@ to
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
-    width: 200px;
-    height: 200px;
+    background: ${bg};
+    width: ${width};
+    height: ${height};
     margin: auto;
-    background: white;
     position: relative;
-    border-radius: 5px;
+    border-radius: ${radius};
     z-index: 0;
     animation: ${blowUpContent} 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     -webkit-box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.7);
@@ -81,27 +95,28 @@ to
   `
 
   const Message = styled.p`
-    color: #000;
-    font-size: 1em;
+    color: ${messageColor};
+    font-size: ${messageFontSize};
+    text-align: center;
   `
 
   const Button = styled.button`
     text-decoration: none;
     text-shadow: 1px 1px 0px #fff;
     font-weight: 400;
-    color: #000;
-    background-color: #fff;
+    color: ${buttonColor};
+    background-color: ${buttonBg};
     cursor: pointer;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: ${buttonWidth};
+    height: ${buttonHeight};
     opacity: 1;
     position: absolute;
     right: -5px;
     top: -5px;
     &:hover {
-      color: #fff;
-      background: #000;
+      color: ${buttonHoverColor};
+      background: ${buttonHoverBg};
       animation: ${changeOpacity} 0.5s linear;
       border: 2px solid #000;
     }
@@ -116,11 +131,11 @@ to
           </Button>
         </ModalBtn>
         <ModalMessage>
-          <Message>Employee created !</Message>
+          <Message>{messageText}</Message>
         </ModalMessage>
       </ModalWindow>
     </ModalContainer>
   )
 }
 
-export default FormModal
+export default Modal

@@ -37,12 +37,15 @@ import React, { useState } from 'react'
 import Modal from 'react-nmp-modal'
 
 const Form = () => {
+  // write the logic for the display of the modal
   const [isShowing, setIsShowing] = useState(false)
 
+  // write the function for close the modal
   const handleClickToClose = () => {
     setIsShowing(!isShowing)
   }
 
+  // define the css in an object to customize the modal
   const myStylesModal = {
     modalContainerBg: 'rgba(0, 0, 0, 0.7)',
     bg: '#fff',
@@ -59,6 +62,10 @@ const Form = () => {
     buttonHoverBg: '#000'
   }
 
+  /* then, add props in the modal component:
+modalStyle = css style,
+onClick = modal closing function,
+messageText = the message to display */
   return (
     <>
       <form>.... </form>

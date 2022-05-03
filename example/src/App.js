@@ -3,11 +3,14 @@ import Modal from 'react-nmp-modal'
 import ReactDOM from 'react-dom'
 
 const App = () => {
-  const [isShowing, setIsShowing] = useState(true)
+  const [isShowing, setIsShowing] = useState(false)
+
+  // function that closes the modal
   const handleClickToClose = () => {
     setIsShowing(!isShowing)
   }
 
+  // to customize the modal
   const styles = {
     modalContainerBg: 'rgba(0, 0, 0, 0.7)',
     bg: '#fff',

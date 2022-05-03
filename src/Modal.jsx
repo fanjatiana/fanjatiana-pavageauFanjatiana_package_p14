@@ -17,6 +17,8 @@ const Modal = ({ modalStyles, onClick, messageText }) => {
     buttonHoverColor,
     buttonHoverBg
   } = modalStyles
+
+  // to customize the modal with styled-components
   const changeOpacity = keyframes`
 from
 {

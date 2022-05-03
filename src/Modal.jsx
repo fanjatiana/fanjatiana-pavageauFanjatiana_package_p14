@@ -9,18 +9,18 @@ import {
   ModalWindow
 } from '../example/src/stylesModal'
 
-const Modal = (props) => {
+const Modal = ({ modalStyles, onClick, messageText }) => {
   return (
-    <ThemeProvider theme={props.styles}>
+    <ThemeProvider theme={modalStyles}>
       <ModalContainer>
         <ModalWindow>
           <ModalBtn>
-            <Button aria-label='Close' onClick={props.onClick}>
+            <Button aria-label='Close' onClick={onClick}>
               X
             </Button>
           </ModalBtn>
           <ModalMessage>
-            <Message>{props.messageText}</Message>
+            <Message>{messageText}</Message>
           </ModalMessage>
         </ModalWindow>
       </ModalContainer>

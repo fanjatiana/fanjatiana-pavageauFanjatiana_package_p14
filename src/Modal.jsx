@@ -10,7 +10,6 @@ const Modal = ({ modalStyles, onClick, messageText }) => {
     radius,
     messageColor,
     messageFontSize,
-    messageFont,
     buttonColor,
     buttonBg,
     buttonWidth,
@@ -100,7 +99,6 @@ to
   const Message = styled.p`
     color: ${messageColor};
     font-size: ${messageFontSize};
-    font-family: ${messageFont};
     text-align: center;
   `
 

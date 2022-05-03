@@ -19,7 +19,6 @@ const App = () => {
     radius: '5px',
     messageColor: '#000',
     messageFontSize: '1.2em',
-    messageFont:'Verdana',
     buttonColor: '#000',
     buttonBg: '#fff',
     buttonWidth: '30px',

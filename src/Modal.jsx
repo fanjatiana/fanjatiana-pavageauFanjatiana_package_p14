@@ -10,6 +10,7 @@ const Modal = ({ modalStyles, onClick, messageText }) => {
     radius,
     messageColor,
     messageFontSize,
+    messageFont,
     buttonColor,
     buttonBg,
     buttonWidth,
@@ -99,6 +100,7 @@ to
   const Message = styled.p`
     color: ${messageColor};
     font-size: ${messageFontSize};
+    font-family: ${messageFont};
     text-align: center;
   `
 
@@ -114,8 +116,8 @@ to
     height: ${buttonHeight};
     opacity: 1;
     position: absolute;
-    right: -5px;
-    top: -5px;
+    right: -10px;
+    top: -10px;
     &:hover {
       color: ${buttonHoverColor};
       background: ${buttonHoverBg};

@@ -3,7 +3,7 @@ import Modal from 'react-nmp-modal'
 import ReactDOM from 'react-dom'
 
 const App = () => {
-  const [isShowing, setIsShowing] = useState(false)
+  const [isShowing, setIsShowing] = useState(true)
 
   // function that closes the modal
   const handleClickToClose = () => {
@@ -14,11 +14,12 @@ const App = () => {
   const styles = {
     modalContainerBg: 'rgba(0, 0, 0, 0.7)',
     bg: '#fff',
-    width: '200px',
-    height: '200px',
+    width: '300px',
+    height: '100px',
     radius: '5px',
     messageColor: '#000',
-    messageFontSize: '1em',
+    messageFontSize: '1.2em',
+    messageFont:'Verdana',
     buttonColor: '#000',
     buttonBg: '#fff',
     buttonWidth: '30px',
@@ -33,7 +34,7 @@ const App = () => {
           <Modal
             modalStyles={styles}
             onClick={handleClickToClose}
-            messageText='Employee created !'
+            messageText='Employee is created !'
           />
         </>,
         document.body
